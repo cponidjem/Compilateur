@@ -23,6 +23,14 @@
 %%
 S : Main ;
 
+/*S : FonctionNext Main | Main ;
+FonctionNext: FonctionNext Fonction | Fonction;
+Fonction : t_TYPE t_NOM Params Corps;
+
+Params : t_PARENTHESE_OUV ParamNext t_PARENTHESE_FERM | t_PARENTHESE_OUV t_PARENTHESE_FERM;
+ParamNext : ParamNext t_VIRGULE Param | Param;
+Param : t_TYPE t_NOM;*/
+
 Params : t_PARENTHESE_OUV ParamNext t_PARENTHESE_FERM | t_PARENTHESE_OUV t_PARENTHESE_FERM;
 ParamNext : ParamNext t_VIRGULE Param | Param;
 Param : t_TYPE t_NOM;
@@ -166,6 +174,12 @@ While : t_WHILE t_PARENTHESE_OUV
 Return : t_RETURN Expression;
 
 AppelFonction : t_PRINTF t_PARENTHESE_OUV t_NOM t_PARENTHESE_FERM;
+
+/*AppelFonction : t_NOM Args | t_PRINTF t_PARENTHESE_OUV t_NOM t_PARENTHESE_FERM;
+
+Args :  t_PARENTHESE_OUV ArgNext t_PARENTHESE_FERM | t_PARENTHESE_OUV t_PARENTHESE_FERM;
+ArgNext : ArgNext t_VIRGULE Arg | Arg;
+Arg : t_ENTIER | t_NOM;*/
 
 Affectation : t_NOM t_EGAL Expression
 			{
